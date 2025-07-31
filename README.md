@@ -50,7 +50,7 @@ Criação de um sistema onde os itens colecionáveis são cenas independentes. A
 
 - **Motor de Jogo:** Godot Engine 4.4.1
 - **Linguagem:** GDScript
-- **Arte:** Assets Rocky Roads por Essssam (https://essssam.itch.io/rocky-roads)
+- **Arte:** Assets Rocky Roads por Essssam (https://essssam.itch.io/rocky-roads) e músicas por ansimuz (https://ansimuz.itch.io/sunny-land-pixel-game-art)
 
 ---
 
