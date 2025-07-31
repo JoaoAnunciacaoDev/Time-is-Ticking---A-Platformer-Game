@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=4 uid="uid://b60jvl4ff7ylg"]
+
+[ext_resource type="PackedScene" uid="uid://bauypponp7vm4" path="res://Scenes/Game/UI/score_ui.tscn" id="1_ciybh"]
+[ext_resource type="Script" uid="uid://bcsyqkjyq8mm2" path="res://Scenes/Game/game.gd" id="1_flgk0"]
+[ext_resource type="PackedScene" uid="uid://dbuxta3fgcfi6" path="res://Scenes/BackGround/back_ground.tscn" id="1_qikps"]
+[ext_resource type="PackedScene" uid="uid://bu0l8pm5susxd" path="res://Scenes/TileMaps/ground.tscn" id="2_i1e5p"]
+[ext_resource type="PackedScene" uid="uid://dferpib386j1r" path="res://Scenes/Player/player.tscn" id="3_ciybh"]
+[ext_resource type="PackedScene" uid="uid://deho8kbnol6iv" path="res://Scenes/Game/Collectables/coin.tscn" id="4_i1e5p"]
+[ext_resource type="PackedScene" uid="uid://c8a7su8w5i8xy" path="res://Scenes/Game/UI/count_down.tscn" id="4_vifcx"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("countdown", "score_ui", "collectables_container", "positions")]
+script = ExtResource("1_flgk0")
+countdown = NodePath("HUD/CountDown")
+score_ui = NodePath("HUD/Score_UI")
+collectable = ExtResource("4_i1e5p")
+collectables_container = NodePath("Collectables_Container")
+positions = [NodePath("Spawn_Positions/Point"), NodePath("Spawn_Positions/Point2"), NodePath("Spawn_Positions/Point3"), NodePath("Spawn_Positions/Point4"), NodePath("Spawn_Positions/Point5"), NodePath("Spawn_Positions/Point6"), NodePath("Spawn_Positions/Point7"), NodePath("Spawn_Positions/Point8"), NodePath("Spawn_Positions/Point9"), NodePath("Spawn_Positions/Point10"), NodePath("Spawn_Positions/Point11"), NodePath("Spawn_Positions/Point12")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Score_UI" parent="HUD" instance=ExtResource("1_ciybh")]
+
+[node name="CountDown" parent="HUD" instance=ExtResource("4_vifcx")]
+
+[node name="BackGround" parent="." instance=ExtResource("1_qikps")]
+
+[node name="Ground" parent="." instance=ExtResource("2_i1e5p")]
+position = Vector2(4, 0)
+tile_map_data = PackedByteArray("AAABAAcAAAAAAAEAAAACAAYAAAABAAAAAAACAAcAAAABAAEAAAADAAYAAAACAAAAAAADAAcAAAACAAEAAAAEAAcAAAADAAEAAAALAAcAAAAAAAEAAAAMAAYAAAABAAAAAAAMAAcAAAABAAEAAAANAAYAAAACAAAAAAANAAcAAAACAAEAAAAOAAYAAAADAAAAAAAOAAcAAAADAAEAAAABAAgAAAAAAAIAAAACAAgAAAABAAIAAAADAAgAAAACAAIAAAAEAAgAAAADAAIAAAALAAgAAAAAAAIAAAAMAAgAAAABAAIAAAANAAgAAAACAAIAAAAOAAgAAAADAAIAAAAGAAYAAAAAAAEAAAAHAAUAAAABAAAAAAAHAAYAAAABAAEAAAAIAAUAAAACAAAAAAAIAAYAAAACAAEAAAAJAAUAAAADAAAAAAAJAAYAAAADAAEAAAAGAAcAAAAAAAIAAAAHAAcAAAABAAIAAAAIAAcAAAACAAIAAAAJAAcAAAADAAIAAAAFAAYAAAAEAAAAAAABAAUAAAAFAAEAAAAAAAUAAAAEAAEAAAADAAQAAAAEAAAAAAAOAAUAAAAEAAAAAAAFAAMAAAAEAAAAAAAIAAIAAAAFAAEAAAAHAAIAAAAEAAEAAAALAAQAAAAEAAEAAAAMAAQAAAAFAAEAAAAKAAYAAAAEAAAAABA=")
+
+[node name="Collectables_Container" type="Node2D" parent="."]
+
+[node name="Spawn_Positions" type="Node2D" parent="."]
+
+[node name="Point" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(24, 160)
+
+[node name="Point2" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(112, 128)
+
+[node name="Point3" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(176, 96)
+
+[node name="Point4" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(256, 64)
+
+[node name="Point5" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(384, 128)
+
+[node name="Point6" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(456, 160)
+
+[node name="Point7" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(400, 192)
+
+[node name="Point8" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(328, 184)
+
+[node name="Point9" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(256, 160)
+
+[node name="Point10" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(176, 192)
+
+[node name="Point11" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(104, 184)
+
+[node name="Point12" type="Marker2D" parent="Spawn_Positions"]
+position = Vector2(312, 112)
+
+[node name="Player" parent="." instance=ExtResource("3_ciybh")]
+position = Vector2(104, 208)
+
+[connection signal="timer_is_over" from="HUD/CountDown" to="." method="_on_player_lose"]
+[connection signal="dead" from="Player" to="." method="_on_player_lose"]

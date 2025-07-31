@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbuxta3fgcfi6"]
+
+[ext_resource type="Texture2D" uid="uid://8cmt5yun1e71" path="res://Assets/Backgrounds/desert_b.png" id="1_o6o0c"]
+[ext_resource type="Texture2D" uid="uid://bryl67ol50qff" path="res://Assets/Backgrounds/clouds.png" id="2_dn6e7"]
+[ext_resource type="Texture2D" uid="uid://bwg7hbct71v5r" path="res://Assets/Backgrounds/mountains_b.png" id="3_q1vgw"]
+
+[node name="BackGround" type="ParallaxBackground"]
+
+[node name="bg" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(480, 0)
+
+[node name="sky" type="TextureRect" parent="bg"]
+offset_right = 480.0
+offset_bottom = 272.0
+texture = ExtResource("1_o6o0c")
+
+[node name="bg2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(480, 0)
+
+[node name="clouds" type="TextureRect" parent="bg2"]
+offset_right = 480.0
+offset_bottom = 272.0
+texture = ExtResource("2_dn6e7")
+
+[node name="bg3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(480, 0)
+
+[node name="mountains" type="TextureRect" parent="bg3"]
+offset_right = 480.0
+offset_bottom = 272.0
+texture = ExtResource("3_q1vgw")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bauypponp7vm4"]
+
+[ext_resource type="Script" uid="uid://bbs45xq0xcx2s" path="res://Scenes/Game/UI/score_ui.gd" id="1_qfo4c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w71ph"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.835294, 0.721569, 0, 0.854902)
+
+[node name="Score_UI" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qfo4c")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_w71ph")
+
+[connection signal="scored" from="." to="." method="_on_scored"]

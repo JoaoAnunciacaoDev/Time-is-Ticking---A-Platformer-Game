@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bttnroe6p53i0"
+path="res://.godot/imported/fantasy Dragon.ogg-6fb68e5634559918a51b7ef9f5cde660.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/SunnyLand Music/Adventure pack 1 ogg/fantasy Dragon.ogg"
+dest_files=["res://.godot/imported/fantasy Dragon.ogg-6fb68e5634559918a51b7ef9f5cde660.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
