@@ -33,7 +33,7 @@ var is_correcting_ledge : bool = false
 var is_dead : bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	state_machine._unhandled_input(event)
+	state_machine._on_input(event)
 
 func _physics_process(delta: float) -> void:
 	if is_dead: return

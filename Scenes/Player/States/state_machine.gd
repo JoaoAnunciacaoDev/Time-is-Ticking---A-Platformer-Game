@@ -17,7 +17,7 @@ func _ready() -> void:
 		current_state = initial_state
 		current_state.enter()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _on_input(event: InputEvent) -> void:
 	var new_state = current_state.handle_input(event)
 	if new_state: transition_to(new_state)
 
