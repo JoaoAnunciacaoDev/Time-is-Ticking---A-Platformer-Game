@@ -56,4 +56,4 @@ Criação de um sistema onde os itens colecionáveis são cenas independentes. A
 
 ## Autor
 
-**[João Victor Anunciação da Silva]**
+**João Victor Anunciação da Silva** - 2025
